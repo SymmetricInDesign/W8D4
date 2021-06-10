@@ -6,11 +6,12 @@ class Clock {
         this.minutes = current_date.getMinutes()
         this.seconds = current_date.getSeconds()
         this.printTime()
+        this._tick = this._tick.bind(this)
         // this._tick.bind(this)
         // setInterval.call(this, this._tick(), 1000)
 
 
-        setInterval(this._tick.bind(this) , 1000)
+        setInterval(this._tick , 1000)
     }
 
     printTime(){
